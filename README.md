@@ -151,6 +151,3 @@ Response JSON → Postman
   ]
 }
 ```
-
-## Template Penjelasan untuk Laporan (di bawah screenshot)
-> Saat Postman mengirim `GET /students`, request masuk ke `StudentController` (method `findAll`). Controller tidak mengambil data sendiri, melainkan memanggil `StudentService` yang sudah di-inject lewat constructor. `StudentService` memakai `PrismaService` untuk menjalankan `findMany()`, yang diterjemahkan Prisma menjadi query `SELECT * FROM students` ke database. Hasilnya dikembalikan ke service, lalu ke controller, dan dikirim ke Postman sebagai JSON dengan status 200 OK. `StudentModule` yang mengikat controller dan service ini dalam satu fitur, dan `AppModule` mendaftarkan `StudentModule` ke aplikasi.
